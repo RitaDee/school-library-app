@@ -165,12 +165,11 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
+ 👤**Rita Nkem Daniel**
 
- 👤**Chukwuemeka Ochuba**
-
-- GitHub: [@Donmark2k](https://github.com/Donmark2k)
-- Twitter: [@Donmark2k](https://twitter.com/donmark2k)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chukwuemeka-ochuba/)
+- GitHub: [@RitaDee](https://github.com/RitaDee)
+- Twitter: [@durdana_dee](https://twitter.com/durdana_dee)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/rita-daniel/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -197,7 +196,6 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-[Victor Chiemerie](https://github.com/Victor-chiemerie) has been of tremendous help so far.
 - Give a ⭐️ if you like this project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
