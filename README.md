@@ -79,6 +79,16 @@ After you're finished please remove all the comments and instructions!
 - **[Add a class, Person]**
 - **[Add a class, teacher that inherit from Person]**
 - **[Add a class, student that inherit from Person]**
+- **[Person to inherit from Nameable]**
+- **[Implement TrimmerDecorator that inherit from Decorator]**
+- **[Implement CapitalizeDecorator that inherit from Decorator]**
+- **[Add a class, student that inherit from Person]**
+- **[Add a class, Rental]**
+- **[Add a class, Book]**
+- **[Add a class, Classroom]**
+- **[Implemented many-to-many relationship between Person and Book]**
+- **[Implemented has-many/belongs-to relationship between Classroom and Student]**
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -177,7 +187,7 @@ Example:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-- I will add more class and methods
+- I will add more class and methods.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
