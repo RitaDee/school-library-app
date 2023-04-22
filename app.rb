@@ -8,35 +8,79 @@ require './classroom'
 
 class App
   def initialize
-    @classroom = []
-    @book = []
-    @rental = []
+    @books = []
     @people = []
+    @rentals = []
+  end
+
+  def run
+    puts 'Welcome to School Library App!'
+    loop do
+      interface_menu
+      option = gets.chomp
+      if option == '7'
+        puts 'Thank you for using the Library App!'
+        break
+      end
+      option_selector(option)
+    end
+  end
+
+  def list_books
+    @books.each { |book| puts "#{book.title} by #{book.author}" }
+  end
+
+  def list_people
+    @people.each { |person| puts "#{person.name} - #{person.age}" }
+  end
+
+  def list_rentals_person
+    puts 'Select a person from the following list by number (not id)'
+    @people.each_with_index { |person, index| puts "#{index}) #{person.name}" }
+    person_index = gets.chomp.to_i
+    show_rentals_person(person_index)
+  end
+
+  def show_rentals_person(person_index)
+    puts "#{@people[person_index].name} has rented the following books:"
+    @people[person_index].rentals.map do |rental|
+      puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+    end
   end
 
   def create_person
-    puts 'Do you want to create a student (1) or a teacher (2)? [input the number]'
+    puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]'
     option = gets.chomp
 
     case option
     when '1'
       create_student
-    when '2' then create_teacher
+    when '2'
+      create_teacher
     else
-      puts 'invalid input'
+      puts 'That is not a valid input'
       nil
     end
   end
 
-  def create_student(name, age)
-    print 'Classroom: '
-    classroom_name = gets.chomp
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase == 'y'
-    classroom = Classroom.new(classroom_name)
-    student = Student.new(classroom, age, name, parent_permission: parent_permission)
-    @people << student
-    puts 'Student created successfully'
+  def create_student
+    id = @people.length + 1
+    puts 'Name:'
+    name = gets.chomp
+    puts 'Age:'
+    age = gets.chomp.to_i
+    puts 'Has parent permission? [Y/N]?'
+    permission = gets.chomp
+    if permission.match?(/y/i)
+      parent_permission = true
+    elsif permission.match?(/n/i)
+      parent_permission = false
+    else
+      puts 'That is not a valid input'
+      return
+    end
+    student = Student.new(id, age, name, parent_permission)
+    add_person(student)
   end
 
   def create_teacher
@@ -65,14 +109,27 @@ class App
     @books.each_with_index { |book, index| puts "#{index}) #{book.title}" }
     book_index = gets.chomp.to_i
 
+    if book_index.negative? || book_index >= @books.length
+      puts 'Invalid book selection'
+      return
+    end
+
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index { |person, index| puts "#{index}) #{person.name}" }
     person_index = gets.chomp.to_i
 
+    if person_index.negative? || person_index >= @people.length
+      puts 'Invalid person selection'
+      return
+    end
+
     puts 'Date:'
     date = gets.chomp
 
-    rental = Rental.new(date, @books[book_index], @people[person_index])
+    book = @books[book_index]
+    puts "Selected book: #{book.title} by #{book.author}"
+
+    rental = Rental.new(date, book, @people[person_index])
     add_rental(rental)
   end
 

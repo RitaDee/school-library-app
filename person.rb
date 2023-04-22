@@ -4,12 +4,16 @@ class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
-    @id = Random.rand(1..1000)
+  def initialize(id, age, name = 'Unknown', parent_permission = nil)
+    super()
+    @id = id
     @age = age
     @name = name
-    @parent_permission = parent_permission
-    super()
+    @parent_permission = if parent_permission.nil?
+                           true
+                         else
+                           parent_permission
+                         end
   end
 
   def correct_name
