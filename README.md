@@ -181,6 +181,12 @@ Example:
 - Twitter: [@durdana_dee](https://twitter.com/durdana_dee)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/rita-daniel/)
 
+👤 **Marc Raphael**
+
+- GitHub: [@Marcraphael12](https://github.com/Marcraphael12)
+- Twitter: [@Marcraphael20](https://twitter.com/MarcRaphael20)
+- LinkedIn: [Marc raphael](http://www.linkedin.com/in/marc-raphael-326039204)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -234,6 +240,6 @@ I would like to appreciate [Microverse](https://www.microverse.org/) for providi
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](MIT.md) licensed.
+This project is [License](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
