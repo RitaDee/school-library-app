@@ -42,7 +42,6 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -90,16 +89,6 @@ After you're finished please remove all the comments and instructions!
 - **[Implemented has-many/belongs-to relationship between Classroom and Student]**
 
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-<!-- > Add a link to your deployed project. -->
-
-- Live demo link will appear when ready
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
