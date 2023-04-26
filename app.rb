@@ -126,7 +126,7 @@ class App
     age = gets.chomp
     puts 'Specialization:'
     specialization = gets.chomp
-     teacher = Teacher.new(name, age, specialization)
+    teacher = Teacher.new(name, age, specialization)
     add_person(teacher)
     @people << teacher
     save = []
