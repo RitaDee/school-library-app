@@ -5,6 +5,9 @@ require './rental'
 require './student'
 require './teacher'
 require './classroom'
+require './data/load'
+
+require 'json'
 
 class App
   def initialize
@@ -27,11 +30,33 @@ class App
   end
 
   def list_books
-    @books.each { |book| puts "#{book.title} by #{book.author}" }
+    @load = Load.new
+    @load.load_books
+    if @load.books.empty?
+      puts 'There are no books in the library'
+    else
+      @load.books.each do |book|
+        puts "Title: #{book.title}, Author: #{book.author}".capitalize
+      end
+    end
   end
 
   def list_people
-    @people.each { |person| puts "#{person.name} - #{person.age}" }
+    @load = Load.new
+    @load.load_people
+
+    if @load.people.empty?
+      puts 'There are no people in the library'
+    else
+      @load.people.each do |person|
+        if person.is_a?(Teacher) && person.specialization
+          puts "[Teacher] ID: #{person.id}, Name: #{person.name}, Age: #{person.age},
+           Specialization: #{person.specialization}"
+        else
+          puts "[Student] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
+        end
+      end
+    end
   end
 
   def list_rentals_person
@@ -102,6 +127,18 @@ class App
     author = gets.chomp
     book = Book.new(title, author)
     add_book(book)
+
+    books_data = []
+    books_data = JSON.parse(File.read('./data/books.json')) if File.exist?('./data/books.json')
+
+    # Append new book to existing data
+    books_data << { title: title, author: author }
+
+    # Write combined data back to file
+    File.write('./data/books.json', JSON.pretty_generate(books_data))
+
+    @books << Book.new(title, author)
+    puts 'Book created successfully'
   end
 
   def create_rental

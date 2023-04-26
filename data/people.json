@@ -1,0 +1,19 @@
+[
+    {
+        "id": "456",
+        "name": "Jim",
+        "age": "25",
+        "specialization": "Doctor"
+    },
+    {
+        "id": "789",
+        "name": "Jane",
+        "age": "32",
+        "specialization": "Pilot"
+    },
+    {
+        "id": "432",
+        "name": "Michael",
+        "age": "62"
+    }
+]
