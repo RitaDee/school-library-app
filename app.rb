@@ -126,8 +126,24 @@ class App
     age = gets.chomp
     puts 'Specialization:'
     specialization = gets.chomp
-    teacher = Teacher.new(id, age, name, specialization)
+     teacher = Teacher.new(name, age, specialization)
     add_person(teacher)
+    @people << teacher
+    save = []
+
+    if File.exist?('./data/people.json')
+      # Read existing data from file
+      file = File.read('./data/people.json')
+      save = JSON.parse(file)
+    end
+
+    # Append new teacher data to the array
+    save << { id: teacher.id, name: teacher.name, age: teacher.age, specialization: teacher.specialization }
+
+    # Write the updated array to the file
+    File.write('./data/people.json', JSON.generate(save))
+
+    puts 'Teacher created successfully'
   end
 
   def create_book
