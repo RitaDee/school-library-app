@@ -105,7 +105,17 @@ class App
       return
     end
     student = Student.new(id, age, name, parent_permission)
-    add_person(student)
+    @people << student
+    save = []
+    if File.exist?('./data/people.json')
+      # Read existing data from file
+      file = File.read('./data/people.json')
+      save = JSON.parse(file)
+      add_person(student)
+    end
+    save << { id: student.id, name: student.name, age: student.age }
+    File.write('./data/people.json', JSON.pretty_generate(save))
+    puts 'Student created successfully'
   end
 
   def create_teacher
