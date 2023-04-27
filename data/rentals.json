@@ -1,0 +1,26 @@
+[
+    {
+        "id": "123",
+        "name": "Grace",
+        "book": "HTML and CSS",
+        "author": "Rita Daniel"
+    },
+    {
+        "id": "456",
+        "name": "Jane",
+        "book": "Node.js",
+        "author": "Sharon Stone"
+    },
+    {
+        "id": "789",
+        "name": "Mary",
+        "book": "JavaScript and JQuery",
+        "author": "Jon Ducket"
+    },
+    {
+        "id": "123",
+        "name": "Grace",
+        "book": "HTML and CSS",
+        "author": "Rita Daniel"
+    }
+]
