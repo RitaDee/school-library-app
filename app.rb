@@ -119,7 +119,6 @@ class App
   end
 
   def create_teacher
-    id = @people.length + 1
     puts 'Name:'
     name = gets.chomp
     puts 'Age:'
