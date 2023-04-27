@@ -4,12 +4,16 @@ class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :rentals
 
-  def initialize(id, name, age, parent_permission: false)
+  def initialize(id, name, age, parent_permission = nil)
     super()
     @id = id
     @age = age
     @name = name
-    @parent_permission = parent_permission
+    @parent_permission = if parent_permission.nil?
+                           true
+                         else
+                           parent_permission
+                         end
   end
 
   def correct_name

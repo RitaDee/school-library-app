@@ -2,7 +2,7 @@ require_relative '../teacher'
 
 describe Teacher do
   before :each do
-    @teacher = Teacher.new('CS', 30, 'John Doe')
+    @teacher = Teacher.new('John Doe''CS', 30)
   end
 
   context 'given arguments' do
