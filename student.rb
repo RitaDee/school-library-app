@@ -3,8 +3,8 @@ require './person'
 class Student < Person
   attr_accessor :rentals, :classroom
 
-  def initialize(id, age, name, parent_permission)
-    super(id, age, name, parent_permission)
+  def initialize(id, name, age, parent_permission)
+    super(id, name, age, parent_permission)
     unless classroom.nil?
       @classroom = classroom
       @classroom.students << self
