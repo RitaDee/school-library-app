@@ -9,6 +9,7 @@ class Person < Nameable
     @id = id
     @age = age
     @name = name
+    @rentals = []
     @parent_permission = if parent_permission.nil?
                            true
                          else
