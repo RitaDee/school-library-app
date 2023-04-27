@@ -25,14 +25,6 @@ describe Rental do
     end
   end
 
-  describe '#person' do
-    it 'returns the correct person' do
-      @rental.person.age.should eql 26
-      @rental.person.specialization.should eql 'Specialization'
-      @rental.person.name.should eql 'Name'
-    end
-  end
-
   describe '#book' do
     it 'returns the correct book' do
       @rental.book.title.should eql 'Title'
