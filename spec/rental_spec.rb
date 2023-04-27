@@ -5,7 +5,6 @@ require_relative '../teacher'
 require_relative '../classroom'
 require_relative '../rental'
 
-
 describe Rental do
   before :each do
     @book = Book.new 'Title', 'Author'
